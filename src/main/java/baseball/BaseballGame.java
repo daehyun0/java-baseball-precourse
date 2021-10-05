@@ -40,7 +40,12 @@ public class BaseballGame {
 			AttackResult attackResult = attack.calc();
 
 			isAttackSuccess = attackResult.isAttackSuccess();
+			showAttackResult(attackResult);
 		}
+	}
+
+	private void showAttackResult(AttackResult attackResult) {
+		baseballGameOutput.showAttackResult(attackResult);
 	}
 
 	private Attack attack() {
