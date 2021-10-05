@@ -8,7 +8,8 @@ import baseball.model.AttackResult;
 public class BaseballGameOutput {
 	private final static String MSG_INPUT_NUMBER = "숫자를 입력해주세요 : ";
 	private final static String MSG_WRONG_INPUT = "[ERROR]: 사용자의 입력이 올바르지 않습니다. 3자리의 숫자를 입력해주세요.";
-	private final static String MSG_FORMAT_GAME_RETRY_MSG = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+	private final static String MSG_GAME_RETRY_MSG = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+	private final static String MSG_ATTACK_SUCCESS = "3개의 숫자를 모두 맞히셨습니다! 게임 끝";
 
 	private final static String TERM_STRIKE = "스트라이크";
 	private final static String TERM_BALL = "볼";
@@ -72,10 +73,14 @@ public class BaseballGameOutput {
 	}
 
 	public void showAskingCommandForGameEnd() {
-		showMsgLn(MSG_FORMAT_GAME_RETRY_MSG);
+		showMsgLn(MSG_GAME_RETRY_MSG);
 	}
 
 	public void showWrongInputOnGameEndCommand() {
 		showMsgLn(MSG_GAME_END_COMMAND_WRONG);
+	}
+
+	public void showAttackSuccess() {
+		showMsgLn(MSG_ATTACK_SUCCESS);
 	}
 }
