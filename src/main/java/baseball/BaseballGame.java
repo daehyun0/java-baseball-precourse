@@ -1,9 +1,13 @@
 package baseball;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+import baseball.model.Attack;
 import baseball.utils.BaseballNumberGenerator;
 import baseball.views.BaseballGameOutput;
+import nextstep.utils.Console;
 
 public class BaseballGame {
 	private final BaseballNumberGenerator baseballNumberGenerator;
@@ -31,14 +35,15 @@ public class BaseballGame {
 		boolean isAttackSuccess = false;
 		while (!isAttackSuccess) {
 			baseballGameOutput.showInputNumberMsg();
-			attack();
+			Attack attack = attack();
 
 			isAttackSuccess = true;
 		}
 	}
 
-	private void attack() {
-
+	private Attack attack() {
+		List<String> attackNumber = Arrays.asList(Console.readLine().split(""));
+		return new Attack(targetNumber, attackNumber);
 	}
 
 	private boolean askGameEnd() {
