@@ -27,17 +27,15 @@ public class Attack {
 	}
 
 	private AttackResult validate() {
-		AttackResult attackResult = new AttackResult(false, 0, 0);
 		if (targetNumberList.size() != attackNumberList.size()) {
-			return attackResult;
+			return new AttackResult(false, 0, 0);
 		}
 
 		if (ListUtils.some(attackNumberList, (attackNumber -> !Character.isDigit(attackNumber.charAt(0))))) {
-			return attackResult;
+			return new AttackResult(false, 0, 0);
 		}
 
-		attackResult.setValidAttack(true);
-		return attackResult;
+		return new AttackResult(true, 0, 0);
 	}
 
 	private boolean isStrike(int idx) {
