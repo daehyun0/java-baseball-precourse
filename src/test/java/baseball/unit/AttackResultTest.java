@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import baseball.model.AttackResult;
 
 public class AttackResultTest {
-	@DisplayName("0스트라이크 0볼의 경우 isNothing 메서드가 true를 반환하는지 확인")
+	@DisplayName("isValidAttack이 true이고, 0스트라이크 0볼의 경우 isNothing 메서드가 true를 반환하는지 확인")
 	@Test
 	void testAttackResultIsNothingReturnTrue() {
 		AttackResult attackResult = new AttackResult(true, 0, 0);
