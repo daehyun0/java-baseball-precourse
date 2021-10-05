@@ -15,8 +15,16 @@ public class AttackResult {
 		return strikeCount;
 	}
 
+	public void setStrikeCount(long strikeCount) {
+		this.strikeCount = strikeCount;
+	}
+
 	public long getBallCount() {
 		return ballCount;
+	}
+
+	public void setBallCount(long ballCount) {
+		this.ballCount = ballCount;
 	}
 
 	public boolean isValidAttack() {
@@ -25,14 +33,6 @@ public class AttackResult {
 
 	public void setValidAttack(boolean validAttack) {
 		isValidAttack = validAttack;
-	}
-
-	public void setStrikeCount(long strikeCount) {
-		this.strikeCount = strikeCount;
-	}
-
-	public void setBallCount(long ballCount) {
-		this.ballCount = ballCount;
 	}
 
 	public boolean isNothing() {
