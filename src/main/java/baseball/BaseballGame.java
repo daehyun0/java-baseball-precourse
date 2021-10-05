@@ -13,6 +13,20 @@ public class BaseballGame {
 	}
 
 	public void play() {
-		this.targetNumber = baseballNumberGenerator.generate();
+		boolean isContinueGame = true;
+		while (isContinueGame) {
+			this.targetNumber = baseballNumberGenerator.generate();
+
+			attackBeforeSuccess();
+
+			isContinueGame = !askGameEnd();
+		}
+	}
+
+	private void attackBeforeSuccess() {
+	}
+
+	private boolean askGameEnd() {
+		return false;
 	}
 }
