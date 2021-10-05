@@ -54,6 +54,24 @@ public class BaseballGame {
 	}
 
 	private boolean askGameEnd() {
-		return true;
+		boolean isValidCommand = false;
+		String gameEndCommand = null;
+
+		while (!isValidCommand) {
+			baseballGameOutput.showAskingCommandForGameEnd();
+			gameEndCommand = Console.readLine();
+			isValidCommand = showErrorMsgIfGameEndCommandWrong(gameEndCommand);
+		}
+
+		return gameEndCommand.equals("2");
+	}
+
+	private boolean showErrorMsgIfGameEndCommandWrong(String gameEndCommand) {
+		boolean isOK = gameEndCommand.equals("1") || gameEndCommand.equals("2");
+		if (!isOK) {
+			baseballGameOutput.showWrongInputOnGameEndCommand();
+		}
+
+		return isOK;
 	}
 }
