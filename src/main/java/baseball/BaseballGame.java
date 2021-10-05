@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import baseball.model.Attack;
+import baseball.model.AttackResult;
 import baseball.utils.BaseballNumberGenerator;
 import baseball.views.BaseballGameOutput;
 import nextstep.utils.Console;
@@ -36,8 +37,9 @@ public class BaseballGame {
 		while (!isAttackSuccess) {
 			baseballGameOutput.showInputNumberMsg();
 			Attack attack = attack();
+			AttackResult attackResult = attack.calc();
 
-			isAttackSuccess = true;
+			isAttackSuccess = attackResult.isAttackSuccess();
 		}
 	}
 
