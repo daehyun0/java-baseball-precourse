@@ -24,6 +24,16 @@ public class BaseballGame {
 	}
 
 	private void attackBeforeSuccess() {
+		boolean isAttackSuccess = false;
+		while (!isAttackSuccess) {
+			attack();
+
+			isAttackSuccess = true;
+		}
+	}
+
+	private void attack() {
+
 	}
 
 	private boolean askGameEnd() {
