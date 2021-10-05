@@ -7,11 +7,13 @@
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
 
 ## 구현 목록
-1. Baseball 클래스 생성 (Entrypoint 생성)
+1. BaseballGame 클래스 생성 (Entrypoint 생성)
 2. 번호 생성
-3. 입력요청 텍스트 출력
-4. 사용자 입력
-5. 사용자 입력과 생성된 번호 스트라이크/볼/낫씽 판단
+3. BaseballGame의 전체 loop 생성
+4. BaseballGame의 사용자 입력(공격) 루프 생성
+5. 입력요청 텍스트 출력
+6. 사용자 입력
+7. 사용자 입력과 생성된 번호 스트라이크/볼/낫씽 판단
    1. 3스트라이크일 경우 재시작 & 게임종료 텍스트 출력   
        - 사용자 입력
          - 재시작의 경우 번호 생성으로 이동
