@@ -1,8 +1,12 @@
 package baseball;
 
+import baseball.utils.BaseballNumberGenerator;
+
 public class Application {
     public static void main(String[] args) {
-        BaseballGame baseballGame = new BaseballGame();
+        BaseballNumberGenerator baseballNumberGenerator = new BaseballNumberGenerator();
+
+        BaseballGame baseballGame = new BaseballGame(baseballNumberGenerator);
         baseballGame.play();
     }
 }
