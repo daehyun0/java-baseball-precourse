@@ -6,6 +6,7 @@ import java.util.List;
 
 import baseball.model.Attack;
 import baseball.model.AttackResult;
+import baseball.model.GameEndCommand;
 import baseball.utils.BaseballNumberGenerator;
 import baseball.views.BaseballGameOutput;
 import nextstep.utils.Console;
@@ -24,7 +25,7 @@ public class BaseballGame {
 	public void play() {
 		boolean isContinueGame = true;
 		while (isContinueGame) {
-			this.targetNumber = baseballNumberGenerator.generate();
+			targetNumber = baseballNumberGenerator.generate();
 
 			attackBeforeSuccess();
 
@@ -60,19 +61,18 @@ public class BaseballGame {
 
 	private boolean askGameEnd() {
 		boolean isValidCommand = false;
-		String gameEndCommand = null;
-
+		GameEndCommand gameEndCommand = null;
 		while (!isValidCommand) {
 			baseballGameOutput.showAskingCommandForGameEnd();
-			gameEndCommand = Console.readLine();
+			gameEndCommand = new GameEndCommand(Console.readLine());
 			isValidCommand = showErrorMsgIfGameEndCommandWrong(gameEndCommand);
 		}
 
-		return gameEndCommand.equals("2");
+		return gameEndCommand.isGameEnd();
 	}
 
-	private boolean showErrorMsgIfGameEndCommandWrong(String gameEndCommand) {
-		boolean isOK = gameEndCommand.equals("1") || gameEndCommand.equals("2");
+	private boolean showErrorMsgIfGameEndCommandWrong(GameEndCommand gameEndCommand) {
+		boolean isOK = gameEndCommand.isValid();
 		if (!isOK) {
 			baseballGameOutput.showWrongInputOnGameEndCommand();
 		}
